@@ -1,0 +1,51 @@
+/*make flexbox work in older browsers*/
+@mixin flex-box() {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-flex;
+ 	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: -webkit-flexbox;
+    display: flexbox;
+    display: box;
+    display: flex;
+}
+/*flex: grow (shrink basis)
+flex: 0 1 auto (defaults)
+flex: 1 1 auto (what this shows)*/
+@mixin flex-box-grow() {
+	-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 1;         /* OLD - Firefox 19- */
+	/*width: 100%;*/           /* For old syntax, otherwise collapses. */
+	-webkit-flex: 1;          /* Chrome */
+	-ms-flex: 1;              /* IE 10 */
+	flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+@mixin flex-box-order($order) {
+	-webkit-box-ordinal-group: $order;   /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-ordinal-group: $order;      /* OLD - Firefox 19- */
+	-ms-flex-order: $order;              /* TWEENER - IE 10 */
+	-webkit-order: $order;               /* NEW - Chrome */
+	order: $order;                       /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+/*flex-flow: direction wrap
+flex-flow: row nowrap (defaults)*/
+@mixin flex-box-flow() {
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+@mixin flex-box-justify($justify) {
+	-webkit-justify-content: $justify;
+	-moz-justify-content: $justify;
+	-ms-justify-content: $justify;
+	justify-content: $justify;
+}
+@mixin flex-box-items($alignitems) {
+	-webkit-align-items: $alignitems;
+	-moz-align-items: $alignitems;
+	-ms-align-items: $alignitems;
+	align-items: $alignitems;
+}
