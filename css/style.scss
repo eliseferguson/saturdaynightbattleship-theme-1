@@ -190,7 +190,7 @@ Author URI: http://www.saturdaynightbattleship.com
   @media (min-width: 1200px) {
     .content { margin-top: 80px; }
   }   
-    .sidebar li.widget { list-style: none; }
+    
       .section-heading {  }
       .extra-info, .contact-info { 
         padding: 20px;
@@ -238,9 +238,9 @@ Author URI: http://www.saturdaynightbattleship.com
     }
     
     .column {  
-      @include flex-box;
+      /*@include flex-box;*/
       
-      flex-direction: column;
+      /*flex-direction: column;*/
       min-width: 300px;
       max-width: 320px;
       background: #C85E35;
@@ -252,6 +252,10 @@ Author URI: http://www.saturdaynightbattleship.com
       border: 0px none #000000;
       margin-top: 20px;
       
+    }
+    .textwidget {
+      @include flex-box;
+      flex-direction: column;
     }
     .button {
       margin-top: auto;
@@ -273,7 +277,7 @@ Author URI: http://www.saturdaynightbattleship.com
       margin-right: 20px;
      }
   }
-  .footer li.widget { list-style: none; }
+  
   @media (min-width: 750px) {
     .footer img { display: block; }
   }
@@ -286,7 +290,7 @@ Author URI: http://www.saturdaynightbattleship.com
       margin-top: 20px;
       padding-top: 50px;
     }  
-
+li.widget { list-style: none; }
 /* =========================================================
 Comments
  ========================================================= */

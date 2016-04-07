@@ -176,9 +176,6 @@ nav#nav-mobile a:hover {
 @media (min-width: 1200px) {
   .content {
     margin-top: 80px; } }
-.sidebar li.widget {
-  list-style: none; }
-
 .extra-info, .contact-info {
   padding: 20px;
   margin-bottom: 20px;
@@ -234,6 +231,18 @@ nav#nav-mobile a:hover {
     justify-content: space-between;
     /* switch to row as browser increases in size */ }
   .attorneys .column {
+    /*@include flex-box;*/
+    /*flex-direction: column;*/
+    min-width: 300px;
+    max-width: 320px;
+    background: #C85E35;
+    padding: 20px;
+    border-radius: 36px 36px 36px 36px;
+    -moz-border-radius: 36px 36px 36px 36px;
+    -webkit-border-radius: 36px 36px 36px 36px;
+    border: 0px none #000000;
+    margin-top: 20px; }
+  .attorneys .textwidget {
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-flex;
@@ -247,16 +256,7 @@ nav#nav-mobile a:hover {
     display: flexbox;
     display: box;
     display: flex;
-    flex-direction: column;
-    min-width: 300px;
-    max-width: 320px;
-    background: #C85E35;
-    padding: 20px;
-    border-radius: 36px 36px 36px 36px;
-    -moz-border-radius: 36px 36px 36px 36px;
-    -webkit-border-radius: 36px 36px 36px 36px;
-    border: 0px none #000000;
-    margin-top: 20px; }
+    flex-direction: column; }
   .attorneys .button {
     margin-top: auto;
     color: #fff; }
@@ -273,9 +273,6 @@ nav#nav-mobile a:hover {
     width: 40%;
     margin-right: 20px; }
 
-.footer li.widget {
-  list-style: none; }
-
 @media (min-width: 750px) {
   .footer img {
     display: block; } }
@@ -286,6 +283,9 @@ nav#nav-mobile a:hover {
   text-align: center;
   margin-top: 20px;
   padding-top: 50px; }
+
+li.widget {
+  list-style: none; }
 
 /* =========================================================
 Comments

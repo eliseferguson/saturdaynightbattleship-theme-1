@@ -36,8 +36,13 @@
 
   <div class="section footer">
     <div class="container">
-      <!-- egf put this in the customizer -->
-        <img src="http://placehold.it/409x272" alt="" />
+      
+        
+      <?php if ( get_theme_mod( 'battleship_footer_image' ) ) : ?>
+        <img class="u-max-full-width" src="<?php echo esc_url( get_theme_mod( 'battleship_footer_image' ) ); ?>" alt="" />   
+      <?php else : ?>
+            <img class="u-max-full-width" src="http://placehold.it/409x272" alt="" /> 
+      <?php endif; ?>
         
         <div class="disclaimer">
         <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Disclaimer Area')) : ?>

@@ -3,6 +3,7 @@
           <?php if (has_nav_menu('extra-menu')) {
             wp_nav_menu( array( 'theme_location' => 'extra-menu', 'container_class' => 'my_extra_menu_class' ) );
           }?>
+          <!--egf add option to show or not show these boxes-->
           <div class="extra-info">
             
               <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Extra Info Area')) : ?>
@@ -10,7 +11,7 @@
               <strong>Words and stuff</strong>, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ullamcorper est nibh, suscipit scelerisque leo molestie sit amet. Morbi ullamcorper vestibulum est, eget vestibulum felis sollicitudin ac.
               <?php endif; ?>
               </p>
-            <p><a class="button button-primary" href="#">Learn More</a></p>
+            <p><a class="button button-primary" href="<?php echo get_theme_mod( 'battleship_extra_link', '#' ); ?>">Learn More</a></p>
           </div>
           <div class="contact-info">
             
@@ -22,9 +23,11 @@
               <?php endif; ?>
             
             </p>
-            <!-- egf is this a widget or something? -->
-            <p class="phone">Local: <span>555-555-1234</span><br />
-              Toll Free: <span>800-555-1212</span></p>
-            <p><a class="button button-primary" href="#">Contact Us</a></p>
+            
+          
+
+            <p class="phone"><?php echo get_theme_mod( 'battleship_main_phone_heading', 'Phone: ' ); ?><span><?php echo get_theme_mod( 'battleship_main_phone', '555-1212' ); ?></span><br />
+              <?php echo get_theme_mod( 'battleship_alt_phone_heading', 'Toll Free: ' ); ?><span><?php echo get_theme_mod( 'battleship_alt_phone', '800-555-1212' ); ?></span></p>
+            <p><a class="button button-primary" href="<?php echo get_theme_mod( 'battleship_contact_link', '#' ); ?>">Contact Us</a></p>
           </div>
         </div>

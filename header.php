@@ -35,9 +35,9 @@
   <div class="section header">
     <div class="container">
       <div class="row">
-        <?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
+        <?php if ( get_theme_mod( 'battleship_logo' ) ) : ?>
             <div class='eight columns brand'>
-                <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
+                <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'battleship_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
             </div>
         <?php else : ?>
             <hgroup>
@@ -46,9 +46,15 @@
         <?php endif; ?>
 
         <div class="four columns cta">
-        <!-- egf make this into a widget? -->
-          <span>Local: <strong>555-555-1234</strong></span>
-          <span>Toll Free: <strong>800-555-1212</strong></span>
+        
+          <span><?php echo get_theme_mod( 'battleship_main_phone_heading', 'Phone: ' ); ?>
+          <strong><?php echo get_theme_mod( 'battleship_main_phone', '555-1212' ); ?>
+          </strong></span>
+          <span><?php echo get_theme_mod( 'battleship_alt_phone_heading', 'Toll Free: ' ); ?>
+          <strong><?php echo get_theme_mod( 'battleship_alt_phone', '800-555-1212' ); ?>
+          </strong></span>  
+        
+          
         </div>
       </div>
       <!--Main menu-->
@@ -64,8 +70,15 @@
   </div>
   
   <div class="section hero">
-    <!-- egf add this image to the customizer -->
-    <img class="u-max-full-width" src="http://placehold.it/1395x293" alt="" />
+    
+    
+    <?php if ( get_theme_mod( 'battleship_hero' ) ) : ?>
+      <img class="u-max-full-width" src="<?php echo esc_url( get_theme_mod( 'battleship_hero' ) ); ?>" alt="" />   
+               
+            
+    <?php else : ?>
+          <img class="u-max-full-width" src="http://placehold.it/1395x293" alt="" /> 
+    <?php endif; ?>
     <div class="container">
       
          <div class="tagline">

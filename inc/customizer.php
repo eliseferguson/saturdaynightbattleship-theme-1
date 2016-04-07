@@ -4,7 +4,7 @@ function battleship_theme_customizer( $wp_customize ) {
     $wp_customize->add_section( 'battleship_logo_section' , array(
 	    'title'       => __( 'Logo', 'battleship' ),
 	    'priority'    => 30,
-	    'description' => 'Upload a logo to replace the default site name and description in the header',
+	    'description' => 'Upload a logo to replace the default site name and description in the header - 100px recommended height',
 	) );
 	$wp_customize->add_setting( 'battleship_logo' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'battleship_logo', array(
@@ -12,8 +12,98 @@ function battleship_theme_customizer( $wp_customize ) {
 	    'section'  => 'battleship_logo_section',
 	    'settings' => 'battleship_logo',
 	) ) );
+
+	$wp_customize->add_section( 'battleship_hero_section' , array(
+	    'title'       => __( 'Hero', 'battleship' ),
+	    'priority'    => 30,
+	    'description' => 'Upload a photo to replace the hero placeholder in the header - 1395x293 recommended',
+	) );
+	$wp_customize->add_setting( 'battleship_hero' );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'battleship_hero', array(
+	    'label'    => __( 'Hero', 'battleship' ),
+	    'section'  => 'battleship_hero_section',
+	    'settings' => 'battleship_hero',
+	) ) );
+	$wp_customize->add_section( 'battleship_footer_section' , array(
+	    'title'       => __( 'Footer Image', 'battleship' ),
+	    'priority'    => 30,
+	    'description' => 'Upload a photo to replace the image placeholder in the footer - 409x202 recommended',
+	) );
+	$wp_customize->add_setting( 'battleship_footer_image' );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'battleship_footer_image', array(
+	    'label'    => __( 'Footer Image', 'battleship' ),
+	    'section'  => 'battleship_footer_section',
+	    'settings' => 'battleship_footer_image',
+	) ) );
 }
 add_action( 'customize_register', 'battleship_theme_customizer' );
+
+function text_customizer( $wp_customize ) {
+	$wp_customize->add_section(
+		'text_section_one',
+		array(
+			'title'=>'CTA and Link Settings',
+			'description'=>'Set CTA and other text values',
+			
+			)
+		);
+	$wp_customize->add_setting('battleship_main_phone_heading');
+	$wp_customize->add_control(
+		'battleship_main_phone_heading',
+		array(
+			'label'=>'Main Phone Number Heading',
+			'section'=>'text_section_one',
+			'type'=>'text',
+		)
+	);
+	$wp_customize->add_setting('battleship_main_phone');
+	$wp_customize->add_control(
+		'battleship_main_phone',
+		array(
+			'label'=>'Main Phone Number',
+			'section'=>'text_section_one',
+			'type'=>'text',
+		)
+	);
+	$wp_customize->add_setting('battleship_alt_phone_heading');
+	$wp_customize->add_control(
+		'battleship_alt_phone_heading',
+		array(
+			'label'=>'Alternate Phone Number Heading',
+			'section'=>'text_section_one',
+			'type'=>'text',
+		)
+	);
+	$wp_customize->add_setting('battleship_alt_phone');
+	$wp_customize->add_control(
+		'battleship_alt_phone',
+		array(
+			'label'=>'Alternate Phone Number',
+			'section'=>'text_section_one',
+			'type'=>'text',
+		)
+	);
+	$wp_customize->add_setting('battleship_contact_link');
+	$wp_customize->add_control(
+		'battleship_contact_link',
+		array(
+			'label'=>'Contact Page Link',
+			'section'=>'text_section_one',
+			'type'=>'text',
+		)
+	);
+	$wp_customize->add_setting('battleship_extra_link');
+	$wp_customize->add_control(
+		'battleship_extra_link',
+		array(
+			'label'=>'Extra Info Link',
+			'section'=>'text_section_one',
+			'type'=>'text',
+		)
+	);
+}
+add_action('customize_register', 'text_customizer');
+
 
 function battleship_customize_register( $wp_customize ) {
 	/*******************************************
@@ -30,7 +120,7 @@ function battleship_customize_register( $wp_customize ) {
 	    'default' => '#222',
 	    'label' => 'Main Text Color'
 	);
-	 
+
 	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
 	$txtcolors[] = array(
 	    'slug'=>'color_scheme_2', 
@@ -83,6 +173,7 @@ function battleship_customize_register( $wp_customize ) {
 	    'default' => '#C85E35',
 	    'label' => 'Button Color (on hover)'
 	);
+
 	// add the settings and controls for each color
 	foreach( $txtcolors as $txtcolor ) {
 	 
