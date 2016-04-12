@@ -36,8 +36,21 @@
               </div><!--end navigation-->
           <?php else : ?>
           <?php endif; ?>
-
-
+          <!-- recent posts -->
+          <h3>Recent Blog Posts</h3>
+          <div class="homepage-recent-posts">
+            <?php
+             $postslist = get_posts('numberposts=4&order=DESC&orderby=date');
+             foreach ($postslist as $post) :
+                setup_postdata($post);
+             ?>
+             <div class="homepage-entry">
+             <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+             <?php the_time(get_option('date_format')) ?>
+             <?php the_excerpt(); ?>
+             </div>
+             <?php endforeach; ?>
+           </div>
         </div>
 
 <?php get_sidebar(); ?>

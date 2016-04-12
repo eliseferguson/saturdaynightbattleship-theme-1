@@ -145,6 +145,46 @@ Author URI: http://www.saturdaynightbattleship.com
         color: #000; 
       }
 
+
+/* Drop Downs */
+
+
+.sub-menu
+{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  padding:0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.sub-menu li
+{
+  float:none;
+  width:auto
+}
+
+.sub-menu a
+{
+  line-height:120%;
+  padding:10px 15px
+}
+
+.sub-menu ul
+{
+  top:0;
+  left:100%
+}
+
+#nav-main ul li:hover > ul
+{
+  display:block
+}
+
+
+
   /* =Nav Media Queries
   -------------------------------------------------------------- */
   @media all and (max-width: 900px) {
@@ -156,6 +196,11 @@ Author URI: http://www.saturdaynightbattleship.com
 
     nav#nav-mobile {
       display: block; }
+      ul.sub-menu.expanded {
+        background: #fff;
+        margin: 0;
+      }
+      ul.sub-menu.expanded a:hover { text-decoration: underline; }
   }
   /*---------------------------------*/
 
@@ -429,7 +474,11 @@ padding:0 5px 0 5px;
 }
 
 /* some basic theme styles */
-
+.post {
+  margin: 15px 0;
+  border-bottom: 1px solid #999;
+  padding-bottom: 10px;
+}
 .post-header .date {
   border: 1px solid #ccc;
     width: 75px;
@@ -476,7 +525,46 @@ code { white-space: wrap; }
     padding: 1em;
     display: none;
 }
-
+.entry blockquote {
+    position:relative;
+    border: 1px solid #ccc;
+    margin: 10px;
+    text-align: center;
+    padding: 40px 10px;
+}
+.entry blockquote:before, .entry blockquote:after {
+    color:#EBB1B2;
+    content:'\f10d';
+    font-family:'FontAwesome';
+    font-size:30px;
+    position:absolute;
+    top:5px;
+    left:8px;
+    display:block;
+}
+.entry blockquote:after {
+    content:'\f10e';
+    bottom:0;
+    right:8px;
+    top:auto;
+    left:auto;
+}
 .back-to-top:hover {    
     background-color: rgba(135, 135, 135, 0.50);
+}
+.homepage-recent-posts {
+  @include flex-box;
+  @include flex-box-flow;
+  @include flex-box-justify(space-between);
+}
+.homepage-entry {
+  background: #e0dfdd;
+  max-width: 40%;
+  
+  padding: 20px;
+  margin: 0 0 20px;
+
+}
+@media (max-width: 768px) {
+  .homepage-entry { width: 100%; max-width: 100%; }
 }
