@@ -434,7 +434,8 @@ ol.commentlist {
   margin-top: 20px; }
 
 .entry img {
-  margin: 0 15px; }
+  margin: 0 15px 0 0;
+  float: left; }
 
 .post-footer h3 {
   font-size: 2.5rem; }
@@ -525,3 +526,13 @@ code {
   .homepage-entry {
     width: 100%;
     max-width: 100%; } }
+/*
+Custom fields stuff
+*/
+.template-projects-screenshot {
+  max-width: 50%;
+  float: left;
+  margin-right: 15px; }
+
+.container-template-projects {
+  padding: 20px; }

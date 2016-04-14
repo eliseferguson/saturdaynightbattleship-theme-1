@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php 
+/**
+* Template Name: Template-projects Page
+*/
+
+
+get_header(); ?>
 
 
   <div class="section content">
@@ -31,26 +37,24 @@
               </div><!--end post-->
           <?php endwhile; /* rewind or continue if all posts have been fetched */ ?>
               <div class="navigation index">
-                 <div class="alignleft"><?php next_posts_link( 'Older Entries' ); ?></div>
-                 <div class="alignright"><?php previous_posts_link( 'Newer Entries' ); ?></div>
+                <div class="alignleft"><?php next_posts_link( '< Older Entries' ); ?></div>
+                 <div class="alignright"><?php previous_posts_link( 'Newer Entries >' ); ?></div>
               </div><!--end navigation-->
           <?php else : ?>
           <?php endif; ?>
-          <!-- recent posts egf-make this optional, add featured image thumbnail -->
-          <h3>Recent Blog Posts</h3>
-          <div class="homepage-recent-posts">
-            <?php
-             $postslist = get_posts('numberposts=4&order=DESC&orderby=date');
-             foreach ($postslist as $post) :
-                setup_postdata($post);
-             ?>
-             <div class="homepage-entry">
-             <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-             <?php the_time(get_option('date_format')) ?>
-             <?php the_excerpt(); ?>
-             </div>
-             <?php endforeach; ?>
-           </div>
+
+          <?php 
+            $args = array(
+              'post_type' => 'template-projects',
+              'orderby' => 'title',
+              'order' => 'ASC'
+              );
+            $the_query = new WP_Query($args);
+          ?>
+          <?php if (have_posts() ) : while ($the_query->have_posts() ) : $the_query->the_post(); ?>
+            <?php get_template_part('content', 'template-projects'); ?>
+          <?php endwhile; endif; ?>
+
         </div>
 
 <?php get_sidebar(); ?>

@@ -503,7 +503,7 @@ padding:0 5px 0 5px;
 .post-header .author { font-style: italic; font-size: .9em;  }
 .post-header h2 { margin-bottom: 0; }
 .entry { margin-top: 20px; }
-.entry img { margin: 0 15px; }
+.entry img { margin: 0 15px 0 0; float: left; }
 .post-footer h3 { font-size: 2.5rem; }
 .alignright {
   float: right;
@@ -567,4 +567,18 @@ code { white-space: wrap; }
 }
 @media (max-width: 768px) {
   .homepage-entry { width: 100%; max-width: 100%; }
+}
+
+
+/*
+Custom fields stuff
+*/
+
+.template-projects-screenshot {
+  max-width: 50%;
+  float: left;
+  margin-right: 15px;
+}
+.container-template-projects {
+  padding: 20px;
 }
