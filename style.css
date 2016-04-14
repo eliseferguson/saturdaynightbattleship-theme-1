@@ -13,6 +13,8 @@ flex: 1 1 auto (what this shows)*/
 /*flex-flow: direction wrap
 flex-flow: row nowrap (defaults)*/
 /* egf add site color settings, remove from skeleton */
+/* main structure styles 
+-------------------------------------------------------------- */
 .brand a {
   display: block;
   text-decoration: none;
@@ -41,7 +43,7 @@ flex-flow: row nowrap (defaults)*/
 @media (min-width: 750px) {
   .cta {
     font-size: 1.1em; } }
-/* =Nav
+/* Navigation
 -------------------------------------------------------------- */
 #nav-trigger {
   display: none;
@@ -135,7 +137,8 @@ nav#nav-mobile a:hover {
   background-color: #fff;
   color: #000; }
 
-/* Drop Downs */
+/* Drop Downs for navigation 
+---------------------------------------*/
 .sub-menu {
   display: none;
   position: absolute;
@@ -160,7 +163,7 @@ nav#nav-mobile a:hover {
 #nav-main ul li:hover > ul {
   display: block; }
 
-/* =Nav Media Queries
+/* Navigation Media Queries
 -------------------------------------------------------------- */
 @media all and (max-width: 900px) {
   #nav-trigger {
@@ -178,7 +181,8 @@ nav#nav-mobile a:hover {
 
   ul.sub-menu.expanded a:hover {
     text-decoration: underline; } }
-/*---------------------------------*/
+/* End navigation styles
+---------------------------------*/
 .hero img {
   min-height: 200px; }
 
@@ -256,15 +260,11 @@ nav#nav-mobile a:hover {
     -moz-flex-flow: row wrap;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
-    /* wrap isn't working in safari and on phones*/
     -webkit-justify-content: space-between;
     -moz-justify-content: space-between;
     -ms-justify-content: space-between;
-    justify-content: space-between;
-    /* switch to row as browser increases in size */ }
+    justify-content: space-between; }
   .attorneys .column {
-    /*@include flex-box;*/
-    /*flex-direction: column;*/
     min-width: 300px;
     max-width: 320px;
     background: #C85E35;
@@ -319,9 +319,8 @@ nav#nav-mobile a:hover {
 li.widget {
   list-style: none; }
 
-/* =========================================================
-Comments
- ========================================================= */
+/* Comment styles
+ --------------------------------------- */
 ol.commentlist {
   list-style: none;
   margin: 0 0 1em;
@@ -374,7 +373,8 @@ ol.commentlist {
   background: #ececec;
   padding: 0 5px 0 5px; }
 
-/* Highlight active form field */
+/* Highlight active form field 
+--------------------------------------------*/
 #respond input[type=text], textarea {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
@@ -396,7 +396,8 @@ ol.commentlist {
   box-sizing: border-box;
   width: 100%; }
 
-/* some basic theme styles */
+/* some basic theme styles 
+----------------------------------------*/
 .post {
   margin: 15px 0;
   border-bottom: 1px solid #999;
@@ -526,13 +527,12 @@ code {
   .homepage-entry {
     width: 100%;
     max-width: 100%; } }
-/*
-Custom fields stuff
-*/
-.template-projects-screenshot {
+/* Custom fields styles
+----------------------------------------------*/
+.template-projects-screenshot, .plugin-projects-screenshot {
   max-width: 50%;
   float: left;
   margin-right: 15px; }
 
-.container-template-projects {
+.container-template-projects, .container-plugin-projects {
   padding: 20px; }
