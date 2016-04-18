@@ -57,11 +57,24 @@ function text_customizer( $wp_customize ) {
 	$wp_customize->add_section(
 		'text_section_one',
 		array(
-			'title'=>'CTA and Link Settings',
+			'title'=>'Header Section',
 			'description'=>'Set CTA and other text values',
 			
 			)
 		);
+	$wp_customize->add_setting( 'battleship_show_cta', array(
+		'default'        => true,
+		
+		 ) );
+
+		$wp_customize->add_control(
+		'battleship_show_cta',
+		array(
+		    'section'   => 'text_section_one',
+		    'label'     => 'Show CTA?',
+		    'type'      => 'checkbox'
+		     )
+		 );
 	$wp_customize->add_setting('battleship_main_phone_heading');
 	$wp_customize->add_control(
 		'battleship_main_phone_heading',

@@ -25,9 +25,12 @@
             </p>
             
           
-
+            <?php if(true === get_theme_mod('battleship_show_cta')){ ?> 
             <p class="phone"><?php echo get_theme_mod( 'battleship_main_phone_heading', 'Phone: ' ); ?><span><?php echo get_theme_mod( 'battleship_main_phone', '555-1212' ); ?></span><br />
               <?php echo get_theme_mod( 'battleship_alt_phone_heading', 'Toll Free: ' ); ?><span><?php echo get_theme_mod( 'battleship_alt_phone', '800-555-1212' ); ?></span></p>
+            <? 
+            }; 
+            ?>
             <p><a class="button button-primary" href="<?php echo get_theme_mod( 'battleship_contact_link', '#' ); ?>">Contact Us</a></p>
           </div>
         </div>

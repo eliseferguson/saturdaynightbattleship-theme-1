@@ -31,7 +31,7 @@
 if( ! class_exists( 'SNB_Updater' ) ){
     include_once( plugin_dir_path( __FILE__ ) . 'updater.php' );
 }
-$updater = new Alte_Updater( __FILE__ );
+$updater = new SNB_Updater( __FILE__ );
 $updater->set_username( 'eliseferguson' );
 $updater->set_repository( 'saturdaynightbattleship-theme-1' );
 /*
@@ -60,14 +60,16 @@ $updater->initialize();
         <?php endif; ?>
 
         <div class="four columns cta">
-        
+        <?php if(true === get_theme_mod('battleship_show_cta')){ ?> 
           <span><?php echo get_theme_mod( 'battleship_main_phone_heading', 'Phone: ' ); ?>
           <strong><?php echo get_theme_mod( 'battleship_main_phone', '555-1212' ); ?>
           </strong></span>
           <span><?php echo get_theme_mod( 'battleship_alt_phone_heading', 'Toll Free: ' ); ?>
           <strong><?php echo get_theme_mod( 'battleship_alt_phone', '800-555-1212' ); ?>
           </strong></span>  
-        
+        <?
+        }; 
+        ?>
           
         </div>
       </div>
