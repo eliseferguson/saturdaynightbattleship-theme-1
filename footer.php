@@ -3,7 +3,8 @@
     </div>
   </div>
 <!-- egf account for more or less call out boxes? -->
-  <div class="section attorneys">
+<?php if(true === get_theme_mod('battleship_show_boxes')){ ?> 
+  <div class="section calloutboxes">
     <div class="container">
       <div class="row">
         <div class="one-third column">
@@ -33,7 +34,9 @@
       </div>
     </div>
   </div>
-
+<?php
+};
+?>
   <div class="section footer">
     <div class="container">
       

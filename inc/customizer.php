@@ -25,16 +25,31 @@ function battleship_theme_customizer( $wp_customize ) {
 	    'settings' => 'battleship_hero',
 	) ) );
 	$wp_customize->add_section( 'battleship_footer_section' , array(
-	    'title'       => __( 'Footer Image', 'battleship' ),
+	    'title'       => __( 'Footer Section', 'battleship' ),
 	    'priority'    => 30,
 	    'description' => 'Upload a photo to replace the image placeholder in the footer - 409x202 recommended',
 	) );
 	$wp_customize->add_setting( 'battleship_footer_image' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'battleship_footer_image', array(
-	    'label'    => __( 'Footer Image', 'battleship' ),
+	    'label'    => __( 'Footer Section', 'battleship' ),
 	    'section'  => 'battleship_footer_section',
 	    'settings' => 'battleship_footer_image',
 	) ) );
+
+	$wp_customize->add_setting( 'battleship_show_boxes', array(
+		'default'        => true,
+		
+		 ) );
+
+		$wp_customize->add_control(
+		'battleship_show_boxes',
+		array(
+		    'section'   => 'battleship_footer_section',
+		    'label'     => 'Show bottom callout boxes?',
+		    'type'      => 'checkbox'
+		     )
+		 );
+
 }
 add_action( 'customize_register', 'battleship_theme_customizer' );
 
@@ -274,7 +289,7 @@ function battleship_customize_colors() {
 	    .footer { 
 	        background: <?php echo $footer_background_color; ?>;
 	    }
-	    .attorneys .column {
+	    .calloutboxes .column {
 	    	background: <?php echo $callout_background_color; ?>;
 	    }
 	    .cta strong {

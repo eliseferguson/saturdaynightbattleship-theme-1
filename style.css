@@ -235,14 +235,14 @@ nav#nav-mobile a:hover {
   clear: both;
   padding-top: 10px; }
 
-.attorneys {
+.calloutboxes {
   color: #fff; }
-  .attorneys h2 {
+  .calloutboxes h2 {
     color: #fff;
     font-size: 1.5em; }
-  .attorneys a {
+  .calloutboxes a {
     color: #ccc; }
-  .attorneys .row {
+  .calloutboxes .row {
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-flex;
@@ -264,7 +264,7 @@ nav#nav-mobile a:hover {
     -moz-justify-content: space-between;
     -ms-justify-content: space-between;
     justify-content: space-between; }
-  .attorneys .column {
+  .calloutboxes .column {
     min-width: 300px;
     max-width: 320px;
     background: #C85E35;
@@ -274,7 +274,7 @@ nav#nav-mobile a:hover {
     -webkit-border-radius: 36px 36px 36px 36px;
     border: 0px none #000000;
     margin-top: 20px; }
-  .attorneys .textwidget {
+  .calloutboxes .textwidget {
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-flex;
@@ -289,12 +289,12 @@ nav#nav-mobile a:hover {
     display: box;
     display: flex;
     flex-direction: column; }
-  .attorneys .button {
+  .calloutboxes .button {
     margin-top: auto;
     color: #fff; }
 
 @media (min-width: 400px) {
-  .attorneys .column {
+  .calloutboxes .column {
     margin: 20px auto 0; } }
 .footer {
   background: #e0dfdd;
