@@ -28,16 +28,16 @@
   <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
 <?php 
 // EGF testing the updater - is this going to work?
-if( ! class_exists( 'SNB_Updater' ) ){
-    include_once( plugin_dir_path( __FILE__ ) . 'updater.php' );
-}
-$updater = new SNB_Updater( __FILE__ );
-$updater->set_username( 'eliseferguson' );
-$updater->set_repository( 'saturdaynightbattleship-theme-1' );
-/*
-    $updater->authorize( 'abcdefghijk1234567890' ); // Your auth code goes here for private repos
-*/
-$updater->initialize();
+// if( ! class_exists( 'SNB_Updater' ) ){
+//     include_once( plugin_dir_path( __FILE__ ) . 'updater.php' );
+// }
+// $updater = new SNB_Updater( __FILE__ );
+// $updater->set_username( 'eliseferguson' );
+// $updater->set_repository( 'saturdaynightbattleship-theme-1' );
+// /*
+//     $updater->authorize( 'abcdefghijk1234567890' ); // Your auth code goes here for private repos
+// */
+// $updater->initialize();
 ?>
 
   <?php wp_head(); ?>
